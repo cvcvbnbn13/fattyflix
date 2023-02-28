@@ -40,6 +40,9 @@ const SigninForm = ({ switchAuthState }) => {
         dispatch(setUser(res))
         dispatch(setAuthModalOpen(false))
         toast.success('登入成功')
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000)
       }
 
       if (error) {

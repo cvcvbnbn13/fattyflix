@@ -66,13 +66,6 @@ const Topbar = () => {
     dispatch(setThemeMode(theme))
   }
 
-  const handleSignedIn = () => {
-    dispatch(setAuthModalOpen(true))
-    setTimeout(() => {
-      window.location.reload()
-    }, 2000)
-  }
-
   const handleToggleSidebar = () => setSidebarOpen(!sidebarOpen)
 
   return (
@@ -127,7 +120,10 @@ const Topbar = () => {
             </Box>
             <Stack spacing={3} direction="row" alignItems="center">
               {!user && (
-                <Button variant="contained" onClick={handleSignedIn}>
+                <Button
+                  variant="contained"
+                  onClick={() => dispatch(setAuthModalOpen(true))}
+                >
                   登入
                 </Button>
               )}
