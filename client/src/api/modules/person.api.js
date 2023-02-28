@@ -8,7 +8,7 @@ const personEndpoints = {
 const personApi = {
   detail: async ({ personId }) => {
     try {
-      const res = await publicClient.get(personEndpoints.detail)
+      const res = await publicClient.get(personEndpoints.detail({ personId }))
 
       return { res }
     } catch (error) {
@@ -18,7 +18,7 @@ const personApi = {
 
   medias: async ({ personId }) => {
     try {
-      const res = await publicClient.get(personEndpoints.medias)
+      const res = await publicClient.get(personEndpoints.medias({ personId }))
 
       return { res }
     } catch (error) {
