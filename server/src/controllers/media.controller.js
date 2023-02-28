@@ -78,14 +78,13 @@ const getDetail = async (req, res) => {
         })
         media.isFavorite = isFavorite !== null
       }
-
-      media.reviews = await reviewModel
-        .find({ mediaId })
-        .populate('user')
-        .sort('-createdAt')
-
-      responseHandler.ok(res, media)
     }
+    media.reviews = await reviewModel
+      .find({ mediaId })
+      .populate('user')
+      .sort('-createdAt')
+
+    responseHandler.ok(res, media)
   } catch {
     responseHandler.error(res)
   }
