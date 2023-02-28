@@ -23,7 +23,6 @@ const PersonDetail = () => {
       const { res, error } = await personApi.detail({ personId })
       dispatch(setGlobalLoading(false))
 
-      console.log(error)
       if (error) toast.error(error)
       if (res) setPerson(res)
     }
