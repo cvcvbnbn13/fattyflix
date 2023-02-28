@@ -186,7 +186,7 @@ const HereSlide = ({ mediaType, mediaCategory }) => {
                     to={routesGen.mediaDetail(mediaType, movie.id)}
                     sx={{ width: 'max-content' }}
                   >
-                    觀看預告片
+                    觀看簡介
                   </Button>
                 </Stack>
               </Box>
