@@ -1,14 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react'
 
 import { LoadingButton } from '@mui/lab'
-import {
-  Box,
-  Button,
-  Stack,
-  TextField,
-  Toolbar,
-  Typography,
-} from '@mui/material'
+import { Box, Button, Stack, TextField, Toolbar } from '@mui/material'
 
 import { toast } from 'react-toastify'
 
@@ -17,10 +10,11 @@ import MediaGrid from '../../components/common/MediaGrid'
 import uiConfigs from '../../configs/ui.configs'
 
 const mediaTypes = [
-  { category: 'movie', name: '電影' },
-  { category: 'tv', name: '節目' },
-  { category: 'people', name: '演員' },
+  { category: 'movie', displayName: '電影' },
+  { category: 'tv', displayName: '節目' },
+  { category: 'people', displayName: '演員' },
 ]
+
 let timer
 const timeout = 1000
 
@@ -102,13 +96,13 @@ const MeadiaSearch = () => {
                 }}
                 onClick={() => handleCategorySwitch(item)}
               >
-                {item.name}
+                {item.displayName}
               </Button>
             ))}
           </Stack>
           <TextField
             color="success"
-            placeholder={`搜尋${mediaType.name}...`}
+            placeholder={`搜尋${mediaType.displayName}...`}
             sx={{ width: '100%' }}
             autoFocus
             onChange={handleQueryChange}
